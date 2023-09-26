@@ -1,6 +1,4 @@
-import classNames from "classnames";
 import React from "react";
-import { IconType } from "react-icons";
 import {
   TbArrowDownRight,
   TbArrowUpRight,
@@ -10,8 +8,6 @@ import {
   TbMinus,
   TbPointFilled,
 } from "react-icons/tb";
-
-// import { Container } from './styles';
 
 type Coin = {
   name: "btc" | "xmr";
@@ -72,7 +68,10 @@ const Coin: React.FC<{ coin: Coin }> = ({ coin }) => {
   const colors = ["bg-slate-400", "bg-green-500", "bg-yellow-500"] as const;
 
   return (
-    <div className="flex flex-nowrap items-center gap-4 text-sm">
+    <div
+      className="flex flex-nowrap items-center gap-4 text-sm"
+      key={coin.name}
+    >
       <div className="flex flex-nowrap items-center gap-2">
         <div className="rounded-full bg-black p-1">
           {logos[coin.name]({ size: 18, color: "white" })}
