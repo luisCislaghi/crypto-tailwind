@@ -14,7 +14,7 @@ import Coins from "./coins";
 
 const Header: React.FC = () => {
   return (
-    <header className="flex items-center justify-between py-8 pr-10 ">
+    <header className="flex items-center justify-between py-8 pr-10">
       <div className="flex flex-nowrap items-center gap-8">
         <div>
           <Input icon={TbSearch} placeholder="Search" />
