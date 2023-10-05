@@ -2,9 +2,11 @@ import React from "react";
 import Card from "@/components/card";
 import { Wallets } from "./wallets";
 import Link from "next/link";
-import { DiffRender } from "./@header/coins";
+import { DiffRender, MoneyRender } from "./@header/coins";
+import { coins } from "@/app/coins";
 import { PageTitle } from "@/components/page-title";
 import { TbArrowDownRight } from "react-icons/tb";
+import Table from "@/components/table";
 
 const Dashboard: React.FC = ({}) => {
   return (
@@ -44,10 +46,61 @@ const Dashboard: React.FC = ({}) => {
             <>
               <Card
                 title="Top-week PoS Tokens"
-                extra={<div className="flex">View all PoS-tokens</div>}
+                extra={
+                  <div className="flex font-semibold">View all PoS-tokens</div>
+                }
                 className="w-7/12"
               >
-                asdasd
+                <Table
+                  showHeader={false}
+                  data={
+                    [
+                      { id: 1, coin: "sol", diff: -6.2, value: 10.23 },
+                      { id: 2, coin: "btc", diff: 12.67, value: 204.32 },
+                      { id: 3, coin: "eth", diff: 3.19, value: 64.81 },
+                    ] as {
+                      id: number;
+                      coin: keyof typeof coins;
+                      diff: number;
+                      value: number;
+                    }[]
+                  }
+                  columns={[
+                    {
+                      dataIndex: "coin",
+                      render: (_, row) => {
+                        return (
+                          <div className="flex items-center gap-3">
+                            <div className="rounded-full bg-black p-2">
+                              {coins[row.coin].icon({
+                                color: "white",
+                                size: 18,
+                              })}
+                            </div>
+                            <span className="font-bold">
+                              {coins[row.coin].name}
+                            </span>
+                            <span className="text-lg">
+                              {coins[row.coin].code.toUpperCase()}
+                            </span>
+                          </div>
+                        );
+                      },
+                    },
+                    {
+                      dataIndex: "diff",
+                      render: (_, row) => {
+                        return <DiffRender value={row.diff} />;
+                      },
+                    },
+                    {
+                      dataIndex: "value",
+                      render: (_, row) => {
+                        return <MoneyRender value={row.value} prefix="$ " />;
+                      },
+                    },
+                  ]}
+                />
               </Card>
               <Card
                 className="flex-1 bg-stone-950"
@@ -107,7 +160,9 @@ const Dashboard: React.FC = ({}) => {
 const Extra = () => {
   return (
     <ul className="flex flex-nowrap gap-6">
-      <li className="font-semibold underline underline-offset-4">Exchange</li>
+      <li className="font-semibold underline decoration-2 underline-offset-4">
+        Exchange
+      </li>
       <li className="font-semibold">Buy</li>
       <li className="font-semibold">Sell </li>
       <li className="font-semibold">Send</li>
