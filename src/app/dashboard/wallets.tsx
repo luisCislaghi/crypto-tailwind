@@ -1,10 +1,13 @@
 import Card from "@/components/card";
 import Link from "next/link";
 import React from "react";
-import { TbPlus, TbSquareArrowRightFilled } from "react-icons/tb";
+import {
+  TbCurrencyDollar,
+  TbPlus,
+  TbSquareArrowRightFilled,
+} from "react-icons/tb";
 import { CoinBalance, DiffRender, MoneyRender } from "./@header/coins";
 import { coins } from "@/app/coins";
-import clsx from "clsx";
 
 export const Wallets: React.FC = () => {
   const wallets: CoinBalance[] = ["sol", "eth"].map(
@@ -35,6 +38,7 @@ export const Wallets: React.FC = () => {
           size="small"
           className="flex-1 bg-lime-200"
           bordered={false}
+          icon={TbCurrencyDollar}
           title="Dollar"
         >
           <div className="flex-row">
@@ -71,7 +75,7 @@ export const Wallets: React.FC = () => {
       </div>
       <div
         className={
-          "flex items-center justify-center rounded-3xl bg-dashed-border p-6"
+          "flex items-center justify-center rounded-3xl bg-dashed-border p-6 hover:cursor-pointer"
         }
       >
         <TbPlus size={24} color="#020617" />

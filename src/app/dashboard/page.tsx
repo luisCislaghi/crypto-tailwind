@@ -29,14 +29,31 @@ const Dashboard: React.FC = ({}) => {
               className="flex-1 bg-[#ffe0ac]"
               bordered={false}
               title="Operations"
-              extra={<Extra />}
+              extra={
+                <ul className="flex flex-nowrap gap-6">
+                  <li className="font-semibold underline decoration-2 underline-offset-4">
+                    Exchange
+                  </li>
+                  <li className="font-semibold">Buy</li>
+                  <li className="font-semibold">Sell </li>
+                  <li className="font-semibold">Send</li>
+                </ul>
+              }
             >
               <div></div>
             </Card>
             <Card
               title="Earnings"
               description={<DiffRender value={13.14} />}
-              extra={<Extra />}
+              extra={
+                <ul className="flex flex-nowrap gap-6">
+                  <li className="font-semibold underline decoration-2 underline-offset-4">
+                    Days
+                  </li>
+                  <li className="font-semibold">Months</li>
+                  <li className="font-semibold">Years </li>
+                </ul>
+              }
               className="flex-1"
             >
               <div></div>
@@ -155,18 +172,6 @@ const Dashboard: React.FC = ({}) => {
         </Card>
       </div>
     </div>
-  );
-};
-const Extra = () => {
-  return (
-    <ul className="flex flex-nowrap gap-6">
-      <li className="font-semibold underline decoration-2 underline-offset-4">
-        Exchange
-      </li>
-      <li className="font-semibold">Buy</li>
-      <li className="font-semibold">Sell </li>
-      <li className="font-semibold">Send</li>
-    </ul>
   );
 };
 

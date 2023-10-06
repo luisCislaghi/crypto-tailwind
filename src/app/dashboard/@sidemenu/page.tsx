@@ -34,7 +34,12 @@ const Item: React.FC<{ active?: boolean; icon: IconType }> = ({
   icon: Icon,
 }) => {
   return (
-    <div className={clsx("rounded-lg p-3", active ? "bg-black" : "bg-white")}>
+    <div
+      className={clsx(
+        "rounded-lg p-3 hover:cursor-pointer",
+        active ? "bg-black" : "bg-white",
+      )}
+    >
       <Icon color={active ? "white" : "#020617"} size={20} />
     </div>
   );
