@@ -97,9 +97,7 @@ const Dashboard: React.FC = ({}) => {
                             <span className="font-bold">
                               {coins[row.coin].name}
                             </span>
-                            <span className="text-lg">
-                              {coins[row.coin].code.toUpperCase()}
-                            </span>
+                            <span>{coins[row.coin].code.toUpperCase()}</span>
                           </div>
                         );
                       },
@@ -112,6 +110,7 @@ const Dashboard: React.FC = ({}) => {
                     },
                     {
                       dataIndex: "value",
+                      align: "right",
                       render: (_, row) => {
                         return <MoneyRender value={row.value} prefix="$ " />;
                       },
