@@ -7,6 +7,7 @@ import { coins } from "@/app/coins";
 import { PageTitle } from "@/components/page-title";
 import { TbArrowDownRight } from "react-icons/tb";
 import Table from "@/components/table";
+import NavMenu from "@/components/nav-menu";
 
 const Dashboard: React.FC = ({}) => {
   return (
@@ -30,14 +31,14 @@ const Dashboard: React.FC = ({}) => {
               bordered={false}
               title="Operations"
               extra={
-                <ul className="flex flex-nowrap gap-6">
-                  <li className="font-semibold underline decoration-2 underline-offset-4">
-                    Exchange
-                  </li>
-                  <li className="font-semibold">Buy</li>
-                  <li className="font-semibold">Sell </li>
-                  <li className="font-semibold">Send</li>
-                </ul>
+                <NavMenu
+                  items={[
+                    { label: "Exchange", href: "", active: true },
+                    { label: "Buy", href: "", active: false },
+                    { label: "Sell", href: "", active: false },
+                    { label: "Send", href: "", active: false },
+                  ]}
+                />
               }
             >
               <div></div>
@@ -46,13 +47,13 @@ const Dashboard: React.FC = ({}) => {
               title="Earnings"
               description={<DiffRender value={13.14} />}
               extra={
-                <ul className="flex flex-nowrap gap-6">
-                  <li className="font-semibold underline decoration-2 underline-offset-4">
-                    Days
-                  </li>
-                  <li className="font-semibold">Months</li>
-                  <li className="font-semibold">Years </li>
-                </ul>
+                <NavMenu
+                  items={[
+                    { label: "Days", href: "", active: true },
+                    { label: "Months", href: "", active: false },
+                    { label: "Years", href: "", active: false },
+                  ]}
+                />
               }
               className="flex-1"
             >
