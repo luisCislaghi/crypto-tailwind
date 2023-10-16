@@ -131,6 +131,7 @@ const Dashboard: React.FC = ({}) => {
               </Card>
               <Card
                 className="flex-1 bg-stone-950"
+                bordered={false}
                 title={
                   <>
                     <span className="text-violet-200">

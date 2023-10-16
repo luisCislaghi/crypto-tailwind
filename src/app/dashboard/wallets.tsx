@@ -59,15 +59,15 @@ export const Wallets: React.FC = () => {
               icon={c.icon}
             >
               <>
-                <p className="mb-2">
+                <div className="mb-2">
                   <MoneyRender
                     value={wallet.value}
                     suffix={` ${c.code.toUpperCase()}`}
                   />
-                </p>
-                <p>
+                </div>
+                <div>
                   <DiffRender value={wallet.difference} />
-                </p>
+                </div>
               </>
             </Card>
           );
