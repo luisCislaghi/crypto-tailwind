@@ -8,6 +8,7 @@ import { PageTitle } from "@/components/page-title";
 import { TbArrowDownRight } from "react-icons/tb";
 import Table from "@/components/table";
 import NavMenu from "@/components/nav-menu";
+import Select from "@/components/select";
 
 const Dashboard: React.FC = ({}) => {
   return (
@@ -41,7 +42,16 @@ const Dashboard: React.FC = ({}) => {
                 />
               }
             >
-              <div></div>
+              <div>
+                <Select
+                  options={[
+                    { label: "asdas" },
+                    { label: "kkkkkkk" },
+                    { label: "312312312" },
+                  ]}
+                  placeholder="escolher"
+                />
+              </div>
             </Card>
             <Card
               title="Earnings"
