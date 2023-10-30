@@ -1,5 +1,3 @@
-"use client";
-
 import * as RadixSelect from "@radix-ui/react-select";
 import { TbCheck, TbChevronDown, TbChevronUp } from "react-icons/tb";
 import clsx from "clsx";

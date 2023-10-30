@@ -13,11 +13,7 @@ export type SelectProps = Pick<RadixSelect.SelectValueProps, "placeholder"> & {
   triggerProps?: Pick<RadixSelect.SelectTriggerProps, "aria-label">;
 };
 
-export const Select: FC<SelectProps> & DefaultSelectExtension = ({
-  triggerProps,
-  placeholder,
-  ...props
-}) => (
+const Select: FC<SelectProps> = ({ triggerProps, placeholder, ...props }) => (
   <>
     <RadixSelect.Root>
       <RadixSelect.Trigger
@@ -50,7 +46,7 @@ export const Select: FC<SelectProps> & DefaultSelectExtension = ({
   </>
 );
 
-Select.Coins = (props) => {
+const Coins: FC<SelectProps> = (props) => {
   console.log(coins);
   const options = Object.values(coins).map(
     (coin) =>
@@ -63,4 +59,4 @@ Select.Coins = (props) => {
   return <Select {...props} options={options} placeholder="Select a coin" />;
 };
 
-export default Select;
+export { Select, Coins };

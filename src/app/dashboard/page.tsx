@@ -8,7 +8,7 @@ import { PageTitle } from "@/components/page-title";
 import { TbArrowDownRight } from "react-icons/tb";
 import Table from "@/components/table";
 import NavMenu from "@/components/nav-menu";
-import Select from "@/components/select";
+import * as Select from "@/components/select";
 
 const Dashboard: React.FC = ({}) => {
   return (
@@ -43,7 +43,7 @@ const Dashboard: React.FC = ({}) => {
               }
             >
               <div>
-                <Select
+                <Select.Coins
                   options={[
                     { label: "asdas" },
                     { label: "kkkkkkk" },
