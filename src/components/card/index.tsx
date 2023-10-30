@@ -22,9 +22,11 @@ const Card: FC<Props> = ({
   title,
   extra,
   description,
+  ...props
 }) => {
   return (
     <div
+      {...props}
       className={clsx(className, "rounded-3xl", {
         "border-2 border-gray-200": bordered,
         "p-6": size === "small",

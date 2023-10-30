@@ -33,8 +33,8 @@ export const Table = <T extends AnyObject = AnyObject>(
       <table className="w-full">
         {showHeader && (
           <thead>
-            <tr>
-              {columns.map(({ title, align = "left" }) => {
+            <tr key="tr1">
+              {columns.map(({ title, align = "left" }, i) => {
                 return <th className={alignClasses(align)}>{title}</th>;
               })}
             </tr>
@@ -42,10 +42,13 @@ export const Table = <T extends AnyObject = AnyObject>(
         )}
         <tbody>
           {data.map((item, index) => {
+            const key =
+              typeof rowKey === "string" ? item[rowKey] : rowKey(item);
+
             return (
               <tr
                 className="border-b border-gray-200 last:border-none"
-                key={typeof rowKey === "string" ? item[rowKey] : rowKey(item)}
+                key={key}
               >
                 {columns.map(({ align = "left", ...e }) => {
                   return (

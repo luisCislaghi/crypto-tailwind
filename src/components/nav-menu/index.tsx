@@ -16,8 +16,9 @@ export type NavMenuProps = {
 export const NavMenu: React.FC<NavMenuProps> = ({ items, ...props }) => {
   return (
     <ul className="flex flex-nowrap gap-6">
-      {items?.map(({ active = false, ...item }) => (
+      {items?.map(({ active = false, ...item }, i) => (
         <li
+          key={i}
           className={clsx("font-semibold", {
             "underline decoration-2 underline-offset-4": active,
           })}
