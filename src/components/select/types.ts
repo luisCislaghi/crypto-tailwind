@@ -10,6 +10,7 @@ export type DefaultSelectExtension = {
 export type OptionType = {
   type?: "group" | "item";
   label?: string;
+  value?: string;
   icon?: IconType;
   options?: OptionType[];
 };

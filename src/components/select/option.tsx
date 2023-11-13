@@ -22,7 +22,7 @@ const Option: FC<OptionType> = ({
     );
   }
   return (
-    <SelectItem key={label} value={label || "99"} {...props}>
+    <SelectItem value={label || "99"} {...props}>
       {label}
     </SelectItem>
   );
