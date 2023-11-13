@@ -1,10 +1,10 @@
 import * as RadixSelect from "@radix-ui/react-select";
-import { TbCheck, TbChevronDown, TbChevronUp } from "react-icons/tb";
+import { TbCheck } from "react-icons/tb";
 import clsx from "clsx";
 import React, { FC, Ref } from "react";
 import { IconType } from "react-icons";
 
-type SelectItemProps = RadixSelect.SelectItemProps & { icon?: IconType };
+export type SelectItemProps = RadixSelect.SelectItemProps & { icon?: IconType };
 
 const SelectItem = React.forwardRef(
   (

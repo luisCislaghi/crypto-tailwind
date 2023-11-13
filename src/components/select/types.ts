@@ -1,16 +1,26 @@
+import type * as RS from "@radix-ui/react-select";
 import { FC } from "react";
-import { SelectProps } from ".";
-import * as RadixSelect from "@radix-ui/react-select";
 import { IconType } from "react-icons";
 
 export type DefaultSelectExtension = {
   Coins: FC<SelectProps>;
 };
 
-export type OptionType = {
-  type?: "group" | "item";
+export type OptionGroupProps = {
   label?: string;
-  value?: string;
   icon?: IconType;
-  options?: OptionType[];
+  options?: OptionProps[];
 };
+
+export type OptionProps = {
+  label?: string;
+  value: string;
+  icon?: IconType;
+};
+
+export type OptionType = OptionGroupProps | OptionProps;
+
+export type SelectProps = RS.SelectProps &
+  Pick<RS.SelectValueProps, "placeholder"> & {
+    options?: OptionType[];
+  };

@@ -42,15 +42,13 @@ const Dashboard: React.FC = ({}) => {
                 />
               }
             >
-              <div>
-                <Select.Coins
-                  options={[
-                    { label: "asdas" },
-                    { label: "kkkkkkk" },
-                    { label: "312312312" },
-                  ]}
-                  placeholder="escolher"
-                />
+              <div className="flex flex-nowrap gap-4">
+                <Select.Coins />
+                <Select.Coins />
+              </div>
+              <div className="flex flex-nowrap gap-4">
+                {/* <Input.Text />
+                <Input.Text /> */}
               </div>
             </Card>
             <Card
