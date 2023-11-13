@@ -1,3 +1,4 @@
+import { IconType } from "react-icons";
 import {
   TbCurrencyDogecoin,
   TbCurrencyLitecoin,
@@ -7,34 +8,37 @@ import {
   TbCurrencyEthereum,
 } from "react-icons/tb";
 
-export const coins = {
+export type CoinObject = {
+  [key: string]: CoinInfo;
+};
+
+export type CoinInfo = {
+  name: string;
+  icon: IconType;
+};
+
+export const coins: CoinObject = {
   eth: {
-    code: "eth",
     name: "Ethereum",
     icon: TbCurrencyEthereum,
   },
   doge: {
-    code: "doge",
     name: "Dogecoin",
     icon: TbCurrencyDogecoin,
   },
   btc: {
-    code: "btc",
     name: "Bitcoin",
     icon: TbCurrencyBitcoin,
   },
   xmr: {
-    code: "xmr",
     name: "Monero",
     icon: TbCurrencyMonero,
   },
   sol: {
-    code: "sol",
     name: "Solana",
     icon: TbCurrencySolana,
   },
   ltc: {
-    code: "ltc",
     name: "Litecoin",
     icon: TbCurrencyLitecoin,
   },

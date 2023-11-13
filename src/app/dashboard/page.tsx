@@ -88,7 +88,7 @@ const Dashboard: React.FC = ({}) => {
                       { id: 3, coin: "eth", diff: 3.19, value: 64.81 },
                     ] as {
                       id: number;
-                      coin: keyof typeof coins;
+                      coin: string;
                       diff: number;
                       value: number;
                     }[]
@@ -108,7 +108,7 @@ const Dashboard: React.FC = ({}) => {
                             <span className="font-bold">
                               {coins[row.coin].name}
                             </span>
-                            <span>{coins[row.coin].code.toUpperCase()}</span>
+                            <span>{row.coin.toUpperCase()}</span>
                           </div>
                         );
                       },

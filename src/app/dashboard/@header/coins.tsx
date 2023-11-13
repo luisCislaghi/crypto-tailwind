@@ -3,7 +3,7 @@ import { TbArrowDownRight, TbArrowUpRight, TbMinus } from "react-icons/tb";
 import { coins } from "@/app/coins";
 
 export type CoinBalance = {
-  name: keyof typeof coins;
+  name: string;
   value: number;
   difference: number;
 };
@@ -44,7 +44,7 @@ const Coin: React.FC<{ coin: CoinBalance }> = ({ coin }) => {
           {coinInfo.icon({ color: "white" })}
         </div>
         <div className="font-bold">{coinInfo.name}</div>
-        <div className="text-stone-400">{coinInfo.code.toUpperCase()}</div>
+        <div className="text-stone-400">{coin.name.toUpperCase()}</div>
       </div>
       <div>
         <MoneyRender value={coin.value} prefix="$" />

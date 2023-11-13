@@ -62,7 +62,7 @@ export const Wallets: React.FC = () => {
                 <div className="mb-2">
                   <MoneyRender
                     value={wallet.value}
-                    suffix={` ${c.code.toUpperCase()}`}
+                    suffix={` ${wallet.name.toUpperCase()}`}
                   />
                 </div>
                 <div>
