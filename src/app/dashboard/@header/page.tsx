@@ -19,14 +19,12 @@ const Header: React.FC = () => {
         <div>
           <Input icon={TbSearch} placeholder="Search" />
         </div>
-        <div>
-          <Coins
-            coins={[
-              { name: "btc", value: 2000.29, difference: -112.21 },
-              { name: "xmr", value: 1200.12, difference: 12 },
-            ]}
-          />
-        </div>
+        <Coins
+          coins={[
+            { name: "btc", value: 2000.29, difference: -112.21 },
+            { name: "xmr", value: 1200.12, difference: 12 },
+          ]}
+        />
       </div>
       <div className="flex flex-nowrap items-center gap-8">
         <div>

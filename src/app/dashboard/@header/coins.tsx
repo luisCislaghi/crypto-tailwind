@@ -26,10 +26,17 @@ const Coins: React.FC<{ coins: CoinBalance[] }> = ({ coins }) => {
   return (
     <div className="flex flex-nowrap items-center gap-4">
       {coins.map((coin, i) => (
-        <div key={coin.name}>
-          {i !== 0 && <div className="h-2 w-2 rounded-sm bg-stone-300" />}
-          <Coin coin={coin} />
-        </div>
+        <>
+          {i !== 0 && (
+            <div
+              key={coin.name + "-separator"}
+              className="h-2 w-2 rounded-sm bg-stone-300"
+            />
+          )}
+          <div key={coin.name}>
+            <Coin coin={coin} />
+          </div>
+        </>
       ))}
     </div>
   );
