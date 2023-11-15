@@ -47,8 +47,8 @@ const Dashboard: React.FC = ({}) => {
               <Select.Coins defaultValue="Solana" classNames="w-full" />
             </div>
             <div className="flex flex-nowrap gap-4">
-              <Input />
-              <Input.Text />
+              <Input.Currency coin="usd" />
+              <Input.Currency coin="btc" />
             </div>
           </Card>
           <Card

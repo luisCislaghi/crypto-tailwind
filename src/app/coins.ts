@@ -6,6 +6,7 @@ import {
   TbCurrencyBitcoin,
   TbCurrencyMonero,
   TbCurrencyEthereum,
+  TbCurrencyDollar,
 } from "react-icons/tb";
 
 export type CoinObject = {
@@ -18,6 +19,10 @@ export type CoinInfo = {
 };
 
 export const coins: CoinObject = {
+  usd: {
+    name: "Dollar",
+    icon: TbCurrencyDollar,
+  },
   eth: {
     name: "Ethereum",
     icon: TbCurrencyEthereum,
