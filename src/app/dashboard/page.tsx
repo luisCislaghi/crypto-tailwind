@@ -43,8 +43,8 @@ const Dashboard: React.FC = ({}) => {
             }
           >
             <div className="flex flex-nowrap gap-4">
-              <Select.Coins />
-              <Select.Coins />
+              <Select.Coins defaultValue="Bitcoin" classNames="w-full" />
+              <Select.Coins defaultValue="Solana" classNames="w-full" />
             </div>
             <div className="flex flex-nowrap gap-4">
               <Input />

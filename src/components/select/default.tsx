@@ -6,16 +6,20 @@ import React, { FC } from "react";
 import Option from "./option";
 import { OptionProps, OptionGroupProps, SelectProps } from "./types";
 import PlaceHolder from "./placeholder";
+import clsx from "clsx";
 
 const Select: FC<SelectProps> = React.forwardRef<
   HTMLButtonElement,
   SelectProps
->(({ options, placeholder, ...props }, forwardedRef) => (
+>(({ options, placeholder, classNames, ...props }, forwardedRef) => (
   <>
     <RS.Root {...props}>
       <RS.Trigger
         ref={forwardedRef}
-        className="flex items-center  justify-between rounded-lg bg-white p-2 px-4  leading-none"
+        className={clsx(
+          "flex items-center  justify-between rounded-lg bg-white p-2 px-4  leading-none",
+          classNames,
+        )}
       >
         <RS.Value placeholder={<PlaceHolder>{placeholder}</PlaceHolder>} />
         <RS.Icon className="SelectIcon">

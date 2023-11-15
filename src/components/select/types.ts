@@ -23,4 +23,5 @@ export type OptionType = OptionGroupProps | OptionProps;
 export type SelectProps = RS.SelectProps &
   Pick<RS.SelectValueProps, "placeholder"> & {
     options?: OptionType[];
+    classNames?: string;
   };
