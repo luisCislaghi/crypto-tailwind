@@ -10,23 +10,19 @@ const Input: React.FC<
   >
 > = ({ icon: Icon, className, ...props }) => {
   return (
-    <div className="flex flex-nowrap items-center text-gray-500">
+    <div className="flex flex-nowrap items-center ">
       {Icon && (
-        <div className="absolute px-4 ">
+        <div className="absolute px-4 text-gray-500">
           <Icon size={18} />
         </div>
       )}
       <input
         {...props}
         type="text"
-        className={clsx(
-          { "pl-12": !!Icon },
-          "w-80 rounded-lg p-2.5",
-          className,
-        )}
+        className={clsx({ "pl-12": !!Icon }, " rounded-lg p-2.5", className)}
       />
     </div>
   );
 };
 
-export default Input;
+export default Object.assign(Input, { Text: Input });
