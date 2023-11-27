@@ -4,7 +4,12 @@ import { IconType, IconBase } from "react-icons";
 import { TbSearch } from "react-icons/tb";
 import { InputProps } from "./types";
 
-const Input: React.FC<InputProps> = ({ icon: Icon, className, ...props }) => {
+const Input: React.FC<InputProps> = ({
+  icon: Icon,
+  className,
+  type = "text",
+  ...props
+}) => {
   return (
     <div className="flex flex-nowrap items-center ">
       {Icon && (
@@ -14,8 +19,8 @@ const Input: React.FC<InputProps> = ({ icon: Icon, className, ...props }) => {
       )}
       <input
         {...props}
-        type="text"
-        className={clsx({ "pl-12": !!Icon }, " rounded-lg p-2.5", className)}
+        type={type}
+        className={clsx({ "pl-12": !!Icon }, " rounded-lg p-3", className)}
       />
     </div>
   );
