@@ -35,10 +35,13 @@ const Card: FC<Props> = ({
     >
       {(title || description || extra) && (
         <header
-          className={cn("flex flex-1 flex-wrap content-between items-center", {
-            "mb-4 gap-8": size === "default",
-            "mb-2 gap-6": size === "small",
-          })}
+          className={cn(
+            "flex flex-1 flex-nowrap content-between items-center",
+            {
+              "mb-4 gap-8": size === "default",
+              "mb-2 gap-6": size === "small",
+            },
+          )}
         >
           <div
             className={cn("flex flex-1  items-center", {
