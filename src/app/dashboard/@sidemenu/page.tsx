@@ -10,7 +10,7 @@ import {
   TbCurrencyBitcoin,
 } from "react-icons/tb";
 import { IconType } from "react-icons";
-import clsx from "clsx";
+import cn from "@/util/cn";
 
 const SideMenu: React.FC = () => {
   return (
@@ -35,7 +35,7 @@ const Item: React.FC<{ active?: boolean; icon: IconType }> = ({
 }) => {
   return (
     <div
-      className={clsx(
+      className={cn(
         "rounded-lg p-3 hover:cursor-pointer",
         active ? "bg-black" : "bg-white",
       )}

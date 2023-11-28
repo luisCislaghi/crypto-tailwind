@@ -1,5 +1,5 @@
 import { AnyObject } from "@/util/type";
-import clsx from "clsx";
+import cn from "@/util/cn";
 import React, { FC, Key, ReactNode } from "react";
 
 export type ColumnType<T> = {
@@ -23,7 +23,7 @@ export const Table = <T extends AnyObject = AnyObject>(
   const defaultRender = (value: string | number, row: T) => value;
 
   const alignClasses = (align: string) =>
-    clsx({
+    cn({
       "text-right": align === "right",
       "text-center": align === "center",
     });
@@ -53,7 +53,7 @@ export const Table = <T extends AnyObject = AnyObject>(
                 {columns.map(({ align = "left", ...e }) => {
                   return (
                     <td
-                      className={clsx(
+                      className={cn(
                         "p-2 first:pl-0 last:pr-0",
                         alignClasses(align),
                       )}

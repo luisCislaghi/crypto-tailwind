@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import cn from "@/util/cn";
 import React, { DetailedHTMLProps, InputHTMLAttributes } from "react";
 import { IconType, IconBase } from "react-icons";
 import { TbSearch } from "react-icons/tb";
@@ -20,7 +20,7 @@ const Input: React.FC<InputProps> = ({
       <input
         {...props}
         type={type}
-        className={clsx({ "pl-12": !!Icon }, " rounded-lg p-3", className)}
+        className={cn({ "pl-12": !!Icon }, " rounded-lg p-3", className)}
       />
     </div>
   );

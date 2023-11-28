@@ -1,6 +1,7 @@
 import React from "react";
 import { TbArrowDownRight, TbArrowUpRight, TbMinus } from "react-icons/tb";
 import { coins } from "@/app/coins";
+import cn from "@/util/cn";
 
 export type CoinBalance = {
   name: string;
@@ -89,7 +90,13 @@ export const MoneyRender = ({
   );
 };
 
-export const DiffRender = ({ value }: { value: number }) => {
+export const DiffRender = ({
+  value,
+  className,
+}: {
+  className?: string;
+  value: number;
+}) => {
   const diff = value === 0 ? 0 : value > 0 ? 1 : 2;
 
   const icons = [TbMinus, TbArrowUpRight, TbArrowDownRight] as const;
@@ -97,13 +104,15 @@ export const DiffRender = ({ value }: { value: number }) => {
 
   return (
     <>
-      <div className="flex flex-nowrap items-center gap-2">
+      <div
+        className={cn("flex flex-nowrap items-center gap-2 text-xs", className)}
+      >
         <div
           className={`flex h-fit items-center rounded-lg px-1 ${colors[diff]}`}
         >
           {icons[diff]({ size: 12, color: "white" })}
         </div>
-        <span className="text-xs font-semibold">{formatPerc(value)}</span>
+        <span className="font-semibold">{formatPerc(value)}</span>
       </div>
     </>
   );

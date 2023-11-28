@@ -1,6 +1,6 @@
 import * as RadixSelect from "@radix-ui/react-select";
 import { TbCheck } from "react-icons/tb";
-import clsx from "clsx";
+import cn from "@/util/cn";
 import React, { FC, Ref } from "react";
 import { IconType } from "react-icons";
 
@@ -13,7 +13,7 @@ const SelectItem = React.forwardRef(
   ) => {
     return (
       <RadixSelect.Item
-        className={clsx(
+        className={cn(
           "flex select-none items-center gap-2 rounded-sm p-2 pl-6 leading-none hover:cursor-pointer hover:bg-stone-100",
           className,
         )}

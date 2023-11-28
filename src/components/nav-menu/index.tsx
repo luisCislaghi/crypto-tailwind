@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import cn from "@/util/cn";
 import Link from "next/link";
 
 import React, { ReactNode } from "react";
@@ -19,7 +19,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items, ...props }) => {
       {items?.map(({ active = false, ...item }, i) => (
         <li
           key={i}
-          className={clsx("font-semibold", {
+          className={cn("font-semibold", {
             "underline decoration-2 underline-offset-4": active,
           })}
         >
