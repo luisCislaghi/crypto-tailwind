@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({
   const wrappperClass = cn("rounded-lg cursor-pointer ", {
     "bg-stone-900 text-white": type === "primary",
     "bg-red-600 text-white": type === "danger",
-    "font-semibold": type === "link",
+    "font-bold": type === "link",
     "bg-stone-400 text-stone-700": disabled,
     "py-3 px-6 text-md": size === "sm",
     "py-4 px-8 text-lg": size === "md",
@@ -34,7 +34,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <div className={wrappperClass}>
       <div className="no-wrap flex items-center justify-center gap-4">
-        {Icon && <Icon className="text-md" />}
+        {Icon && <Icon size={size === "lg" ? 24 : size === "md" ? 20 : 18} />}
         {children}
       </div>
     </div>
