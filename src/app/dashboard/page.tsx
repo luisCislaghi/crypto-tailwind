@@ -5,12 +5,17 @@ import Link from "next/link";
 import { DiffRender, MoneyRender } from "./@header/coins";
 import { coins } from "@/app/coins";
 import { PageTitle } from "@/components/page-title";
-import { TbArrowDownRight, TbArrowsExchange } from "react-icons/tb";
+import {
+  TbArrowDownRight,
+  TbArrowUpRight,
+  TbArrowsExchange,
+} from "react-icons/tb";
 import Table from "@/components/table";
 import NavMenu from "@/components/nav-menu";
 import Select from "@/components/select";
 import Input from "@/components/input";
 import Button from "@/components/button";
+import Slider from "@/components/slider";
 
 const Dashboard: React.FC = ({}) => {
   return (
@@ -45,8 +50,8 @@ const Dashboard: React.FC = ({}) => {
           >
             <div className="flex flex-col gap-5">
               <div className="flex flex-nowrap gap-5">
-                <Select.Coins defaultValue="Bitcoin" classNames="w-full" />
-                <Select.Coins defaultValue="Solana" classNames="w-full" />
+                <Select.Coins defaultValue="Bitcoin" className="w-full" />
+                <Select.Coins defaultValue="Solana" className="w-full" />
               </div>
               <div className="flex flex-nowrap gap-5">
                 <Input.Currency coin="usd" />
@@ -184,11 +189,25 @@ const Dashboard: React.FC = ({}) => {
           </Link>
         </div>
         <Card
-          className="mb-6 flex-1 bg-purple-200"
+          className="mb-6 bg-violet-200"
           bordered={false}
           title="Right time to earn"
         >
-          asd
+          <h3 className="mb-5 text-lg font-bold">Token for earning</h3>
+          <div className="flex flex-col gap-4">
+            <Select.Coins defaultValue="Ethereum" className="w-full" />
+            <Input.Currency coin="eth" className="w-full" />
+          </div>
+          <h3 className="mb-2 mt-6 text-lg font-bold">Loan term</h3>
+          <Slider className="w-full" min={1} max={3} />
+          <div className="text-md mb-6 flex w-full justify-between font-semibold">
+            <span>1 year</span>
+            <span>2 years</span>
+            <span>3 years</span>
+          </div>
+          <Button block icon={TbArrowUpRight} size="lg">
+            Earn Crypto
+          </Button>
         </Card>
         <Card className="bg-white" bordered={false} title="10 EHT">
           asd
