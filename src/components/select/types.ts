@@ -1,4 +1,4 @@
-import type * as RS from "@radix-ui/react-select";
+import type * as RadixSelect from "@radix-ui/react-select";
 import { FC } from "react";
 import { IconType } from "react-icons";
 
@@ -20,8 +20,8 @@ export type OptionProps = {
 
 export type OptionType = OptionGroupProps | OptionProps;
 
-export type SelectProps = RS.SelectProps &
-  Pick<RS.SelectValueProps, "placeholder"> & {
+export type SelectProps = RadixSelect.SelectProps &
+  Pick<RadixSelect.SelectValueProps, "placeholder"> & {
     options?: OptionType[];
     className?: string;
   };
