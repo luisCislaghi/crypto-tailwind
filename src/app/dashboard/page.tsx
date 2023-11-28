@@ -5,11 +5,12 @@ import Link from "next/link";
 import { DiffRender, MoneyRender } from "./@header/coins";
 import { coins } from "@/app/coins";
 import { PageTitle } from "@/components/page-title";
-import { TbArrowDownRight } from "react-icons/tb";
+import { TbArrowDownRight, TbArrowsExchange } from "react-icons/tb";
 import Table from "@/components/table";
 import NavMenu from "@/components/nav-menu";
 import Select from "@/components/select";
 import Input from "@/components/input";
+import Button from "@/components/button";
 
 const Dashboard: React.FC = ({}) => {
   return (
@@ -42,18 +43,32 @@ const Dashboard: React.FC = ({}) => {
               />
             }
           >
-            <div className="flex flex-nowrap gap-4">
-              <Select.Coins defaultValue="Bitcoin" classNames="w-full" />
-              <Select.Coins defaultValue="Solana" classNames="w-full" />
-            </div>
-            <div className="flex flex-nowrap gap-4">
-              <Input.Currency coin="usd" />
-              <Input.Currency coin="btc" />
+            <div className="flex flex-col gap-5">
+              <div className="flex flex-nowrap gap-5">
+                <Select.Coins defaultValue="Bitcoin" classNames="w-full" />
+                <Select.Coins defaultValue="Solana" classNames="w-full" />
+              </div>
+              <div className="flex flex-nowrap gap-5">
+                <Input.Currency coin="usd" />
+                <Input.Currency coin="btc" />
+              </div>
+              <div className="flex flex-nowrap justify-between gap-5">
+                <div className="flex-1 text-sm">
+                  <p>Available: $ 107,500.00</p>
+                  <p>Rate: 1.00 USD = 3.23 XTZ</p>
+                  <p>Fee: $ 13.17</p>
+                </div>
+                <div className="flex-1">
+                  <Button block icon={TbArrowsExchange}>
+                    Exchange
+                  </Button>
+                </div>
+              </div>
             </div>
           </Card>
           <Card
             title="Earnings"
-            description={<DiffRender value={13.14} />}
+            description={<DiffRender className="text-md" value={13.14} />}
             className="flex-1"
             extra={
               <NavMenu
