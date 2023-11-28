@@ -11,14 +11,14 @@ import cn from "@/util/cn";
 const Select: FC<SelectProps> = React.forwardRef<
   HTMLButtonElement,
   SelectProps
->(({ options, placeholder, classNames, ...props }, forwardedRef) => (
+>(({ options, placeholder, className, ...props }, forwardedRef) => (
   <>
     <RS.Root {...props}>
       <RS.Trigger
         ref={forwardedRef}
         className={cn(
           "flex items-center  justify-between rounded-lg bg-white p-2 px-4  leading-none",
-          classNames,
+          className,
         )}
       >
         <RS.Value placeholder={<PlaceHolder>{placeholder}</PlaceHolder>} />

@@ -24,14 +24,14 @@ const SelectItem = React.forwardRef(
           <RadixSelect.ItemIndicator className="absolute left-2 inline-flex w-6 justify-center ">
             <TbCheck />
           </RadixSelect.ItemIndicator>
-          <RadixSelect.ItemText className="">
-            <div className="flex items-center  gap-2">
+          <RadixSelect.ItemText>
+            <div className="flex items-center gap-2">
               {Icon && (
-                <div className=" rounded-full bg-black p-2  ">
+                <div className="rounded-full bg-black p-2">
                   <Icon color="white" />
                 </div>
               )}
-              <span className=" font-bold">{children}</span>
+              <span className="font-bold">{children}</span>
             </div>
           </RadixSelect.ItemText>
         </>
