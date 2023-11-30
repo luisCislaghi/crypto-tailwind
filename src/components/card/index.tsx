@@ -5,6 +5,7 @@ import { IconType } from "react-icons";
 type Props = {
   className?: string;
   title?: ReactNode;
+  subtitle?: ReactNode;
   extra?: ReactNode;
   icon?: IconType;
   description?: ReactNode;
@@ -21,6 +22,7 @@ const Card: FC<Props> = ({
   icon: Icon,
   title,
   extra,
+  subtitle,
   description,
   ...props
 }) => {
@@ -40,29 +42,42 @@ const Card: FC<Props> = ({
             "mb-2 gap-6": size === "small",
           })}
         >
-          <div
-            className={cn("flex items-center", {
-              "gap-4": size === "default",
-              "gap-2": size === "small",
-            })}
-          >
-            <>
-              {Icon && (
-                <div className="rounded-full bg-black p-1">
-                  <Icon color="white" />
-                </div>
-              )}
-              <h4
-                className={cn("font-bold", {
-                  "text-lg": size === "small",
-                  "text-2xl": size === "default",
-                })}
-              >
-                {title}
-              </h4>
-              {description}
-            </>
+          <div className="flex flex-col">
+            {subtitle && (
+              <div className="mb-2">
+                <div className="text-sm font-bold">{subtitle}</div>
+              </div>
+            )}
+            <div
+              className={cn("flex items-center", {
+                "gap-4": size === "default",
+                "gap-2": size === "small",
+              })}
+            >
+              <>
+                {Icon && (
+                  <div
+                    className={cn("rounded-full bg-black p-1", {
+                      "text-lg": size === "small",
+                      "text-2xl": size === "default",
+                    })}
+                  >
+                    <Icon color="white" />
+                  </div>
+                )}
+                <h4
+                  className={cn("font-bold", {
+                    "text-lg": size === "small",
+                    "text-2xl": size === "default",
+                  })}
+                >
+                  {title}
+                </h4>
+                {description}
+              </>
+            </div>
           </div>
+
           {extra}
         </header>
       )}
