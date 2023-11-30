@@ -16,6 +16,7 @@ import Select from "@/components/select";
 import Input from "@/components/input";
 import Button from "@/components/button";
 import Slider from "@/components/slider";
+import Tag from "@/components/tag";
 
 const Dashboard: React.FC = ({}) => {
   return (
@@ -209,8 +210,28 @@ const Dashboard: React.FC = ({}) => {
             Earn Crypto
           </Button>
         </Card>
-        <Card className="bg-white" bordered={false} title="10 EHT">
-          asd
+        <Card
+          className="bg-white"
+          bordered={false}
+          icon={coins["eth"].icon}
+          subtitle="Your possible earnings"
+          title="3.5 ETH"
+        >
+          <h3 className="mb-4 font-bold">APY</h3>
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-4">
+              <span>5.6%</span>
+              <Tag className="bg-amber-100 text-sm font-bold">
+                on first 0.25 ETH
+              </Tag>
+            </div>
+            <div className="flex items-center gap-4">
+              <span>2.8%</span>
+              <Tag className="bg-amber-100 text-sm font-bold">
+                on first 0.25 ETH
+              </Tag>
+            </div>
+          </div>
         </Card>
       </div>
     </div>
