@@ -20,8 +20,8 @@ export const Wallets: React.FC = () => {
   );
 
   return (
-    <div className="flex flex-1 flex-nowrap gap-8">
-      <div className="flex flex-1 flex-nowrap gap-8">
+    <div className="flex flex-1 gap-8">
+      <div className="flex flex-1 flex-wrap gap-8">
         <div className="flex-1">
           <h2 className="mb-4 text-3xl font-bold">Wallets</h2>
           <p className="mb-4 font-semibold">
@@ -72,13 +72,13 @@ export const Wallets: React.FC = () => {
             </Card>
           );
         })}
-      </div>
-      <div
-        className={
-          "flex items-center justify-center rounded-3xl bg-dashed-border p-6 hover:cursor-pointer"
-        }
-      >
-        <TbPlus size={24} color="#020617" />
+        <div
+          className={
+            "flex min-h-[164px] items-center justify-center rounded-3xl bg-dashed-border p-6 hover:cursor-pointer"
+          }
+        >
+          <TbPlus size={24} color="#020617" />
+        </div>
       </div>
     </div>
   );

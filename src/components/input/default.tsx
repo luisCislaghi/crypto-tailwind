@@ -20,7 +20,7 @@ const Input: React.FC<InputProps> = ({
       <input
         {...props}
         type={type}
-        className={cn("rounded-lg p-3", { "pl-12": !!Icon }, className)}
+        className={cn("w-full rounded-lg p-3", { "pl-12": !!Icon }, className)}
       />
     </div>
   );

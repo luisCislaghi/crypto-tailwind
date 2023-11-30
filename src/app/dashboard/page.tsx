@@ -49,15 +49,15 @@ const Dashboard: React.FC = ({}) => {
             }
           >
             <div className="flex flex-col gap-5">
-              <div className="flex flex-nowrap gap-5">
+              <div className="flex gap-5">
                 <Select.Coins defaultValue="Bitcoin" className="w-full" />
                 <Select.Coins defaultValue="Solana" className="w-full" />
               </div>
-              <div className="flex flex-nowrap gap-5">
+              <div className="flex gap-5">
                 <Input.Currency coin="usd" />
                 <Input.Currency coin="btc" />
               </div>
-              <div className="flex flex-nowrap justify-between gap-5">
+              <div className="flex justify-between gap-5">
                 <div className="flex-1 text-sm">
                   <p>Available: $ 107,500.00</p>
                   <p>Rate: 1.00 USD = 3.23 XTZ</p>

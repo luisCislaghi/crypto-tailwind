@@ -27,7 +27,7 @@ const Card: FC<Props> = ({
   return (
     <div
       {...props}
-      className={cn(className, "rounded-3xl", {
+      className={cn(className, "flex flex-col rounded-3xl", {
         "border-2 border-gray-200": bordered,
         "p-6": size === "small",
         "p-8": size === "default",
@@ -35,16 +35,13 @@ const Card: FC<Props> = ({
     >
       {(title || description || extra) && (
         <header
-          className={cn(
-            "flex flex-1 flex-nowrap content-between items-center",
-            {
-              "mb-4 gap-8": size === "default",
-              "mb-2 gap-6": size === "small",
-            },
-          )}
+          className={cn("flex flex-wrap items-center justify-between", {
+            "mb-4 gap-8": size === "default",
+            "mb-2 gap-6": size === "small",
+          })}
         >
           <div
-            className={cn("flex flex-1  items-center", {
+            className={cn("flex items-center", {
               "gap-4": size === "default",
               "gap-2": size === "small",
             })}

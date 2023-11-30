@@ -15,7 +15,7 @@ export type NavMenuProps = {
 
 export const NavMenu: React.FC<NavMenuProps> = ({ items, ...props }) => {
   return (
-    <ul className="flex flex-nowrap gap-4">
+    <ul className="flex gap-4">
       {items?.map(({ active = false, ...item }, i) => (
         <li
           key={i}
