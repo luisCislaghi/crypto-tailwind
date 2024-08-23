@@ -17,6 +17,7 @@ import Input from "@/components/input";
 import Button from "@/components/button";
 import Slider from "@/components/slider";
 import Tag from "@/components/tag";
+import Column from "@/components/charts/column";
 
 const Dashboard: React.FC = ({}) => {
   return (
@@ -86,7 +87,34 @@ const Dashboard: React.FC = ({}) => {
               />
             }
           >
-            <div></div>
+            <Column
+              colunmConfig={{
+                data: [
+                  {
+                    label: "1",
+                    value: 0.5,
+                  },
+                  {
+                    label: "2",
+                    value: 3.5,
+                  },
+                  {
+                    label: "4",
+                    value: 3.5,
+                  },
+                  {
+                    label: "5",
+                    value: 3.5,
+                  },
+                  {
+                    label: "6",
+                    value: 3.5,
+                  },
+                ],
+                xField: "label",
+                yField: "value",
+              }}
+            />
           </Card>
         </div>
         <div className="mb-8 flex gap-8">
